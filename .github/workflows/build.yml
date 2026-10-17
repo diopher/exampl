@@ -8,9 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      GEODE_VERSION: v4.0.0
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Build Geode Mod
         uses: geode-sdk/build-geode-mod@main
+        with:
+          sdk: ${{ env.GEODE_VERSION }}
